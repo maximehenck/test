@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tableau d'hypocalcémie - entraînement</title>
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif; padding:20px;}
+    table{border-collapse:collapse; width:100%; max-width:1100px}
+    th, td{border:1px solid #999; padding:8px; text-align:center}
+    th{background:#e9f0f7}
+    select{width:100%; padding:6px}
+    .correct{background:#c8f7c8 !important;}
+    .wrong{background:#f7c8c8 !important;}
+    .controls{margin:12px 0}
+    button{padding:8px 12px; margin-right:8px}
+    caption{font-weight:bold; text-align:left; margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <h2>Tableau d'hypocalcémie — entraînement</h2>
+  <p>Sélectionnez la bonne réponse dans chaque case (↑ = augmenté, ↓ = diminué, N = normal). Puis cliquez sur <strong>Vérifier</strong>.</p>
+
+  <div class="controls">
+    <button id="checkBtn">Vérifier</button>
+    <button id="resetBtn">Réinitialiser</button>
+  </div>
+
+  <table>
+    <caption>Principales causes d'hypocalcémie chronique et présentation biologique</caption>
+    <thead>
+      <tr>
+        <th>Paramètre</th>
+        <th>Pseudo-hypocalcémie</th>
+        <th>Hypoparathyroïdie</th>
+        <th>IRC chronique avancée</th>
+        <th>Carence en vitamine D</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Calcémie totale</td>
+        <td><select data-key="pseudo_total"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_total"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_total"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_total"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>Calcémie ionisée</td>
+        <td><select data-key="pseudo_ion"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_ion"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_ion"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_ion"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>PTH</td>
+        <td><select data-key="pseudo_pth"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_pth"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_pth"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_pth"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>Phosphatémie</td>
+        <td><select data-key="pseudo_phos"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_phos"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_phos"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_phos"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>25 OH Vit D</td>
+        <td><select data-key="pseudo_25"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_25"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_25"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_25"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>1,25 OH Vit D</td>
+        <td><select data-key="pseudo_1125"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_1125"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_1125"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_1125"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+      <tr>
+        <td>Calciurie</td>
+        <td><select data-key="pseudo_calciurie"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="hypo_calciurie"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="irc_calciurie"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+        <td><select data-key="vitd_calciurie"><option value="">--</option><option value="↑">↑</option><option value="↓">↓</option><option value="N">N</option></select></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const correctAnswers = {
+      pseudo_total: '↓', hypo_total: '↓', irc_total: '↓', vitd_total: '↓',
+      pseudo_ion: 'N', hypo_ion: '↓', irc_ion: '↓', vitd_ion: '↓',
+      pseudo_pth: 'N', hypo_pth: '↓', irc_pth: '↑', vitd_pth: '↑',
+      pseudo_phos: 'N', hypo_phos: '↑', irc_phos: '↑', vitd_phos: '↓',
+      pseudo_25: 'N', hypo_25: 'N', irc_25: 'N', vitd_25: '↓',
+      pseudo_1125: 'N', hypo_1125: '↓', irc_1125: '↓', vitd_1125: '↓',
+      pseudo_calciurie: 'N', hypo_calciurie: '↓', irc_calciurie: '↓', vitd_calciurie: '↓'
+    };
+
+    document.getElementById('checkBtn').addEventListener('click', () => {
+      document.querySelectorAll('select[data-key]').forEach(sel => {
+        const key = sel.dataset.key;
+        const td = sel.parentElement;
+        td.classList.remove('correct','wrong');
+        if(sel.value === '') return;
+        if(sel.value === correctAnswers[key]) td.classList.add('correct');
+        else td.classList.add('wrong');
+      });
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.querySelectorAll('select[data-key]').forEach(sel => {
+        sel.value = '';
+        sel.parentElement.classList.remove('correct','wrong');
+      });
+    });
+  </script>
+</body>
+</html>
